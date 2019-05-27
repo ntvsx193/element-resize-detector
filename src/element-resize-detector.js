@@ -7,7 +7,7 @@ var idGeneratorMaker        = require("./id-generator");
 var idHandlerMaker          = require("./id-handler");
 var reporterMaker           = require("./reporter");
 var browserDetector         = require("./browser-detector");
-var batchProcessorMaker     = require("batch-processor");
+var batchProcessorMaker     = require("./batch-processor");
 var stateHandler            = require("./state-handler");
 
 //Detection strategies.
