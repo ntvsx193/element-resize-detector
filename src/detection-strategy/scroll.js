@@ -625,6 +625,10 @@ module.exports = function(options) {
             return;
         }
 
+        if (batchProcessor) {
+            batchProcessor.remove();
+        }
+
         // Uninstall may have been called in the following scenarios:
         // (1) Right between the sync code and async batch (here state.busy = true, but nothing have been registered or injected).
         // (2) In the ready callback of the last level of the batch by another element (here, state.busy = true, but all the stuff has been injected).

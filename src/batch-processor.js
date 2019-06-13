@@ -58,6 +58,13 @@ module.exports = function batchProcessorMaker(options) {
     }
   }
 
+  function remove() {
+    if (asyncFrameHandler) {
+      cancelFrame(asyncFrameHandler);
+      asyncFrameHandler = null;
+    }
+  }
+
   function processBatchAsync() {
     asyncFrameHandler = requestFrame(processBatch);
   }
@@ -83,7 +90,8 @@ module.exports = function batchProcessorMaker(options) {
 
   return {
     add: addFunction,
-    force: forceProcessBatch
+    force: forceProcessBatch,
+    remove: remove
   };
 };
 
